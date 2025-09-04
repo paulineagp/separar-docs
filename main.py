@@ -48,4 +48,4 @@ def organizar_arquivos(separar_arquivos):
 
 organizar_arquivos("C:\\Users\\Pedro\\Documents\\GitHub\\cidades")
 
-print("Pastas organizadas por tipo de arquivo com sucesso!")
+print("Arquivos separados em pastas com sucesso!")
