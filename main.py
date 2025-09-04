@@ -1,6 +1,8 @@
 import os
 import shutil
 
+# criar pasta para cada tipo de extensão
+
 
 def organizar_arquivos(separar_arquivos):
     pasta_pdf = os.path.join(separar_arquivos, 'pdf')
@@ -19,6 +21,7 @@ def organizar_arquivos(separar_arquivos):
             os.makedirs(caminho_pasta_pdf, exist_ok=True)
             os.makedirs(caminho_pasta_jpg, exist_ok=True)
 
+            # separando as extensões
             for arquivo in os.listdir(caminho_pasta_original):
                 caminho_arquivo = os.path.join(caminho_pasta_original, arquivo)
 
