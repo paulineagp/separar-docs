@@ -3,9 +3,9 @@ import shutil
 
 
 def organizar_arquivos(separar_arquivos):
-    pasta_pdf = os.path.join(separar_arquivos, 'pdf')
-    pasta_jpg = os.path.join(separar_arquivos, 'jpg')
-    pasta_txt = os.path.join(separar_arquivos, 'txt')
+    pasta_pdf = os.path.join(separar_arquivos, 'arquivos pdf')
+    pasta_jpg = os.path.join(separar_arquivos, 'arquivos jpg')
+    pasta_txt = os.path.join(separar_arquivos, 'arquivos txt')
 
     os.makedirs(pasta_pdf, exist_ok=True)
     os.makedirs(pasta_jpg, exist_ok=True)
@@ -14,7 +14,7 @@ def organizar_arquivos(separar_arquivos):
     for nome_pasta in os.listdir(separar_arquivos):
         caminho_pasta_original = os.path.join(separar_arquivos, nome_pasta)
 
-        if os.path.isdir(caminho_pasta_original) and nome_pasta not in ['pdf', 'jpg', 'txt']:
+        if os.path.isdir(caminho_pasta_original) and nome_pasta not in ['arquivos pdf', 'arquivos jpg', 'arquivos txt']:
             caminho_pasta_pdf = os.path.join(pasta_pdf, nome_pasta)
             caminho_pasta_jpg = os.path.join(pasta_jpg, nome_pasta)
             caminho_pasta_txt = os.path.join(pasta_txt, nome_pasta)
@@ -48,4 +48,4 @@ def organizar_arquivos(separar_arquivos):
 
 organizar_arquivos("C:\\Users\\Pedro\\Documents\\GitHub\\cidades")
 
-print("Pastas organizadas por tipo de arquivo com sucesso!")
+print("Arquivos separados em pastas com sucesso!")
