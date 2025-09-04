@@ -5,19 +5,23 @@ import shutil
 def organizar_arquivos(separar_arquivos):
     pasta_pdf = os.path.join(separar_arquivos, 'pdf')
     pasta_jpg = os.path.join(separar_arquivos, 'jpg')
+    pasta_txt = os.path.join(separar_arquivos, 'txt')
 
     os.makedirs(pasta_pdf, exist_ok=True)
     os.makedirs(pasta_jpg, exist_ok=True)
+    os.makedirs(pasta_txt, exist_ok=True)
 
     for nome_pasta in os.listdir(separar_arquivos):
         caminho_pasta_original = os.path.join(separar_arquivos, nome_pasta)
 
-        if os.path.isdir(caminho_pasta_original) and nome_pasta not in ['pdf', 'jpg']:
+        if os.path.isdir(caminho_pasta_original) and nome_pasta not in ['pdf', 'jpg', 'txt']:
             caminho_pasta_pdf = os.path.join(pasta_pdf, nome_pasta)
             caminho_pasta_jpg = os.path.join(pasta_jpg, nome_pasta)
+            caminho_pasta_txt = os.path.join(pasta_txt, nome_pasta)
 
             os.makedirs(caminho_pasta_pdf, exist_ok=True)
             os.makedirs(caminho_pasta_jpg, exist_ok=True)
+            os.makedirs(caminho_pasta_txt, exist_ok=True)
 
             for arquivo in os.listdir(caminho_pasta_original):
                 caminho_arquivo = os.path.join(caminho_pasta_original, arquivo)
@@ -34,6 +38,11 @@ def organizar_arquivos(separar_arquivos):
                         shutil.move(
                             caminho_arquivo,
                             os.path.join(caminho_pasta_jpg, arquivo)
+                        )
+                    elif extensao == 'txt':
+                        shutil.move(
+                            caminho_arquivo,
+                            os.path.join(caminho_pasta_txt, arquivo)
                         )
 
 
