@@ -4,6 +4,9 @@ on:
     branches:
       - main
 
+permissions: # permissões mínimas necessárias
+  contents: read
+
 jobs:
   deliver:
     runs-on: ubuntu-latest
@@ -18,4 +21,16 @@ jobs:
           path: |
             main.py
             README.md
-            
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: deliver
+    permissions:
+      actions: read
+      contents: read
+    steps:
+      - uses: actions/download-artifact@v5
+        with:
+          name: projetozipado.zip
+      - name: Display structure of downloaded files
+        run: ls -R
