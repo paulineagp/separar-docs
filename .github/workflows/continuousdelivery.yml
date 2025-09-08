@@ -4,7 +4,7 @@ on:
     branches:
       - main
 
-permissions:
+permissions: # permissões mínimas necessárias
   contents: read
 
 jobs:
