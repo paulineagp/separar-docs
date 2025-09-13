@@ -15,3 +15,9 @@ jobs:
         uses: advanced-security/python-lint-code-scanning-action@v1
         with:
           linter: pylint
+
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Docker
+        uses: docker/setup-docker-action@v4
