@@ -57,6 +57,5 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
-      # Example snippet for .github/workflows/continuousdelivery.yml
-      - name: Build Docker image
-        run: docker build -f separar-docs/Dockerfile .
+          push: true
+          tags: user/app:latest
