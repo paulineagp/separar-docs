@@ -1,6 +1,6 @@
-FROM python:3.11-slim  # Mais específico e menor imagem
+FROM python:3.11-slim  
+WORKDIR /app  
 
-WORKDIR /app  # Diretório mais comum
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
@@ -8,3 +8,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 CMD ["python", "main.py"]
+
