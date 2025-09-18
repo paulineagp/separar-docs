@@ -58,4 +58,4 @@ jobs:
         with:
           context: .
       - name: Build Docker image
-        run: docker build -f C:/Users/Pedro/Documents/GitHub/separar-docs/Dockerfile .
+        run: docker build .
