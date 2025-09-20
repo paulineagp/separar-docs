@@ -24,13 +24,3 @@ jobs:
       - name: Set up Docker
         uses: docker/setup-docker-action@v4
 
-  discord:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Discord Commits
-        uses: Sniddl/discord-commits@v1.6
-        with:
-          webhook: ${{ secrets.DISCORD_WEBHOOK }}
-          template: "avatar-with-link"
-          include-extras: true
