@@ -24,7 +24,7 @@ jobs:
       - name: Set up Docker
         uses: docker/setup-docker-action@v4
 
-  testes:
+  testes: # testes em python
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
