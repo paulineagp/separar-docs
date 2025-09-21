@@ -9,7 +9,6 @@ from main import organizar_arquivos
 def test_criacao_pastas_principais():
     with tempfile.TemporaryDirectory() as temp_dir:
         organizar_arquivos(temp_dir)
-        
         assert os.path.exists(os.path.join(temp_dir, 'arquivos pdf'))
         assert os.path.exists(os.path.join(temp_dir, 'arquivos jpg'))
         assert os.path.exists(os.path.join(temp_dir, 'arquivos txt'))
@@ -38,7 +37,6 @@ def test_organiza_arquivos_por_tipo():
         pdf_path = os.path.join(temp_dir, 'arquivos pdf', 'teste', 'arquivo1.pdf')
         jpg_path = os.path.join(temp_dir, 'arquivos jpg', 'teste', 'arquivo2.jpg')
         txt_path = os.path.join(temp_dir, 'arquivos txt', 'teste', 'arquivo3.txt')
-        
         assert os.path.exists(pdf_path)
         assert os.path.exists(jpg_path)
         assert os.path.exists(txt_path)
@@ -54,7 +52,6 @@ def test_ignora_pastas_principais():
         open(os.path.join(subpasta, 'teste.pdf'), 'w').close()
         organizar_arquivos(temp_dir)
         pdf_path = os.path.join(temp_dir, 'arquivos pdf', 'arquivos pdf')
-        
         assert not os.path.exists(pdf_path)  
 
 
